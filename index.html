@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <section>
+        <div>
+            <div class="card">
+                <div class ="cardleft">
+                    <div class="cardTitle">
+                        <h1>getElementById</h1>
+                        <h3>Conversor de real em dólar</h3>
+                    </div>
+                    <div class="camp-value">
+                        <input type="number" id="real" placeholder="Insira o Valor em Real">
+                        <button onclick="converterreal()">Converter</button>
+                    </div>
+                    <div>
+                        <p>O valor em dolar é: <span id="dolar"></span></p>
+                    </div>
+                </div>
+                <div class = "cardright">
+                    function converterreal(){ </br>
+                    var real= parseInt(document.getElementById("real").value); </br>
+                    var dolar = document.getElementById("dolar") </br>
+                    dolar.textContent= real * 5
+                }</div>
+            </div>
+
+
+
+        </div>
+    </section>
+    
+    <section>
+        <div>
+            <div class="card">
+                <div class ="cardleft">
+                    <div class="cardTitle">
+                        <h1>getElementByClassName</h1>
+                        <h3>Conversor de dólar em real</h3>
+                    </div>
+                    <div class="camp-value">
+                        <input type="number" class="dolar" placeholder="Insira o Valor em Dolar">
+                        <button onclick="converterdolar()">Converter</button>
+                    </div>
+                    <div>
+                        <p>O valor em real é: <span class="real"></span></p>
+                    </div>
+                </div>
+                <div class = "cardright">function converterdolar(){</br>
+                    var dolar= parseInt(document.getElementsByClassName("dolar")[0].value);</br>
+                    var real = document.getElementsByClassName("real")[0];</br>
+                    real.textContent = dolar / 5;</br>
+                    console.log(real)
+                }</div>
+            </div>
+
+
+        </div>
+    </section>
+    
+    <section>
+        <div>
+            <div class="card">
+                <div class ="cardleft">
+                    <div class="cardTitle">
+                        <h1>getElementByTagName</h1>
+                        <h3>Gerador de Números aleatórios</h3>
+                    </div>
+                    <button onclick="gerarnumero()">Gerar Número</button>
+                    <div>
+                        <p>O número é: <span class="randomnumber"></span></p>
+                    </div>
+                </div>
+                <div class = "cardright">
+                    function gerarnumero(){</br>
+                    var number = Math.random()</br>
+                    var elementos = document.getElementsByTagName("span")</br>
+                    for (var i = 0; i < elementos.length; i++){</br></elementos.length>
+                        if(elementos[i].className === "randomnumber"){</br>
+                            elementos[i].textContent = Math.floor(Math.random() * 100) + 1 </br>
+                        }</br>
+                    }</br>
+                    }
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    
+    <section>
+        <div>
+            <div class="card">
+                <div class ="cardleft">
+                    <div class="cardTitle">
+                        <h1>createElement</h1>
+                        <h3>Adiciona produto a lista</h3>
+                    </div>
+                    <div class="camp-value">
+                        <input type="text" id="produto">
+                        <button onclick="adicionarproduto()">Adicionar Produto</button>
+                    </div>
+                    <div>
+                        <ul id="lista"></ul>
+                    </div>
+                </div>
+                <div class = "cardright">
+                    function adicionarproduto(){</br>
+                    var produto = document.getElementById("produto").value;</br>
+                    var listaitem= document.createElement("li");</br>
+                    listaitem.textContent= produto</br>
+                    var lista= document.getElementById("lista").appendChild(listaitem);</br>
+                    document.getElementById("produto").value=""</br>
+                }</div>
+            </div>
+
+
+        </div>
+    </section>
+    
+    <section>
+        <div>
+            <div class="card">
+                <div class ="cardleft">
+                    <div class="cardTitle">
+                        <h1>innerHTML</h1>
+                        <h3>Atribui valor</h3>
+                    </div>
+                    <div id="conteudo">Conteudo do InnerHTML</div>
+                   <div class="camp-value">
+                    <input type="text" id="campo-input">
+                    <button onclick="atributovalor()">Atributo Valor</button>
+                   </div>
+                </div>
+                <div class ="cardright">
+                    function atributovalor(){</br>
+                    var conteudoInnerHTML = document.getElementById("conteudo").innerHTML;</br>
+                    document.getElementById("campo-input").value=conteudoInnerHTML;</br>
+                }</div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="index.js"></script>
+</body>
+</html>
